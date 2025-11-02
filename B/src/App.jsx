@@ -8,6 +8,9 @@ import Contact from "./views/Contact";
 import About from "./views/About";
 import SocialBar from "./components/SocialBar";
 import NotFound from "./views/NotFound";
+import Footer from "./components/Footer";
+import Export from "./views/Export";
+import CatalogueGrid from "./views/CatalogueGrid";
 
 const App = () => {
   return (
@@ -17,12 +20,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/company" element={<Company />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/catalogue" element={<CatalogueGrid />} />
+          <Route path="/export" element={<Export />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      <Footer />
       <SocialBar />
     </>
   );

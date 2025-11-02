@@ -4,6 +4,7 @@ import About from "./About";
 import Advantage from "../components/Advantage";
 import CollectionSection from "./CollectionSection";
 import TileSizes from "./TileSizes";
+import OurSpecialities from "./OurSpecialities";
 
 const Home = () => {
     return (
@@ -22,6 +23,7 @@ const Home = () => {
             <Advantage />
             <CollectionSection />
             <TileSizes />
+            <OurSpecialities />
         </div>
     );
 };
