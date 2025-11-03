@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./views/Home";
 import Company from "./views/Company";
@@ -11,11 +11,23 @@ import Technology from "./views/Technology";
 import SocialBar from "./components/SocialBar";
 import NotFound from "./views/NotFound";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll smoothly to top on route change
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => {
   return (
     <>
-      <div>
+      <div style={{ scrollBehavior: "smooth" }}>
         <Navbar />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/company" element={<Company />} />
