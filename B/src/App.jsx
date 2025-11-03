@@ -6,6 +6,8 @@ import Company from "./views/Company";
 import Services from "./views/Services";
 import Contact from "./views/Contact";
 import About from "./views/About";
+import Usabout from "./views/Usabout";
+import Technology from "./views/Technology";
 import SocialBar from "./components/SocialBar";
 import NotFound from "./views/NotFound";
 
@@ -20,6 +22,8 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/usabout" element={<Usabout />} />
+          <Route path="/tec" element={<Technology />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

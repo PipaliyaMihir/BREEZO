@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
 import aboutImage from "../../public/about.png";
+import { useNavigate } from "react-router-dom"; // ✅ import navigate hook
 
 const About = () => {
+    const navigate = useNavigate(); // ✅ initialize navigate
+
     return (
         <>
             {/* About Section */}
-            <div className="mx-28 px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+            <div className="mx-6 md:mx-28 px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
                 {/* Left side text */}
                 <div>
                     <p className="text-[#3ba17d] text-sm mb-3">About Us</p>
@@ -25,9 +28,7 @@ const About = () => {
 
                 {/* Right side description */}
                 <div className="text-gray-300 leading-relaxed">
-                    <p
-                        className="text-[#d3d3d3] text-[14px] leading-[1.8rem] tracking-[0.2px] text-justify"
-                    >
+                    <p className="text-[#d3d3d3] text-[14px] leading-[1.8rem] tracking-[0.2px] text-justify">
                         Breezo Group of Company stands tall among leading pioneers dedicated
                         to excellence, innovation, and design precision. We specialize in
                         curating a diverse range of premium products that blend aesthetic
@@ -35,13 +36,17 @@ const About = () => {
                         modern living and architecture.
                     </p>
 
-                    <button className="mt-8 bg-[#3ba17d] hover:bg-[#2d7d61] text-white px-6 py-3 rounded transition-all duration-300 text-lg">
+                    {/* ✅ Button that opens /usabout page */}
+                    <button
+                        onClick={() => navigate("/usabout")}
+                        className="mt-8 bg-[#3ba17d] hover:bg-[#2d7d61] text-white px-6 py-3 rounded transition-all duration-300 text-lg"
+                    >
                         Know More →
                     </button>
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default About
+export default About;
